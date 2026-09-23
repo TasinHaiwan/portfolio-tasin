@@ -1,49 +1,151 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from "../layouts/BlogPost.astro"; // or your existing layout import — keep whatever was there
 ---
 
-<!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your{' '}
-				<code>astro.config.mjs</code> file. You can customize your setup with{' '}
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to{' '}
-				<a href="https://docs.astro.build/">read the docs</a>{' '}
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out{' '}
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>{' '}
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tasin — Software Engineer</title>
+  </head>
+  <body>
+    <section class="hero">
+      <h1>Tasin</h1>
+      <p class="subtitle">
+        Software Engineer — Android, Flutter & Kotlin Multiplatform
+      </p>
+      <p class="tagline">I build apps and help founders grow them.</p>
+      <a href="/contact" class="cta">Let's build your software →</a>
+    </section>
+
+    <section class="about">
+      <h2>About</h2>
+      <p>
+        5+ years building apps at scale (1M+ users). Co-Founder & CTO of
+        Sôrolikoron. Currently combining engineering with growth strategy to
+        help founders build and scale products.
+      </p>
+    </section>
+
+    <section class="projects">
+      <h2>Selected Work</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Sôrolikoron</h3>
+          <p>
+            Platform connecting users with trusted representatives for academic,
+            legal, and administrative tasks.
+          </p>
+          <a href="#" target="_blank">View →</a>
+        </div>
+        <div class="project-card">
+          <h3>Better Muslim</h3>
+          <p>Flutter-based Islamic habit tracker app.</p>
+          <a href="#" target="_blank">View →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <h2>Services</h2>
+      <div class="service-grid">
+        <div class="service-card">App Development</div>
+        <div class="service-card">Growth Strategy</div>
+      </div>
+    </section>
+  </body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
+  </nav>
 </html>
+
+<style>
+  :root {
+    --bg: #0f0f10;
+    --text: #f2f2f2;
+    --muted: #a0a0a5;
+    --accent: #4f8cff;
+    --card-bg: #1a1a1c;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    line-height: 1.6;
+  }
+  .hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  .tagline {
+    margin-top: 0.5rem;
+  }
+  .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.6rem;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  section {
+    margin: 3rem 0;
+  }
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .project-grid,
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .project-card,
+  .service-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  .project-card h3 {
+    margin-top: 0;
+  }
+  .project-card a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .service-card {
+    text-align: center;
+    font-weight: 600;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  nav a:hover {
+    color: var(--text);
+  }
+</style>
