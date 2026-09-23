@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = 'Tasin Haiyan';
 export const SITE_DESCRIPTION =
-	'Software Engineer building Android, Flutter & Kotlin Multiplatform apps — currently combining engineering with growth strategy to help founders build and scale products.';
+	'Mobile & Backend Developer and Growth Strategist – building Android, Flutter, and backend systems, and helping founders build and scale products.';
 
 export const SOCIAL_LINKS = {
 	github: 'https://github.com/TasinHaiwan',
