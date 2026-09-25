@@ -11,3 +11,19 @@ export const SOCIAL_LINKS = {
 	email: 'tasinhaiwan40@gmail.com',
 	whatsapp: 'https://wa.me/8801765886380',
 };
+
+export const PROJECTS = [
+	{
+		slug: 'sorolikoron',
+		name: 'Sorolikoron',
+		description:
+			'Platform connecting users with trusted representatives for academic, legal, and administrative tasks.',
+		role: 'Co-Founder & CTO',
+	},
+	{
+		slug: 'better-muslim',
+		name: 'Better Muslim',
+		description: 'Flutter-based Islamic habit tracker app.',
+		role: 'Developer',
+	},
+];

@@ -1,18 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { SITE_DESCRIPTION } from '../consts';
-
-const projects = [
-	{
-		name: 'Sôrolikoron',
-		description:
-			'Platform connecting users with trusted representatives for academic, legal, and administrative tasks.',
-	},
-	{
-		name: 'Better Muslim',
-		description: 'Flutter-based Islamic habit tracker app.',
-	},
-];
+import { PROJECTS, SITE_DESCRIPTION } from '../consts';
 ---
 
 <Layout title="Tasin – Mobile & Backend Developer" description={SITE_DESCRIPTION} wide>
@@ -26,7 +14,7 @@ const projects = [
 	<section class="about">
 		<h2>About</h2>
 		<p>
-			5+ years building apps at scale (1M+ users). Co-Founder &amp; CTO of Sôrolikoron. Currently
+			5+ years building apps at scale (1M+ users). Co-Founder &amp; CTO of Sorolikoron. Currently
 			combining engineering with growth strategy to help founders build and scale products.
 		</p>
 	</section>
@@ -35,12 +23,11 @@ const projects = [
 		<h2>Selected Work</h2>
 		<div class="project-grid">
 			{
-				projects.map((project) => (
-					<div class="project-card">
+				PROJECTS.map((project) => (
+					<a href={`/work/${project.slug}`} class="project-card">
 						<h3>{project.name}</h3>
 						<p>{project.description}</p>
-						<span class="coming-soon">Link coming soon</span>
-					</div>
+					</a>
 				))
 			}
 		</div>
@@ -105,15 +92,20 @@ const projects = [
 		padding: 1.5rem;
 		border-radius: 12px;
 	}
+	.project-card {
+		display: block;
+		text-decoration: none;
+		transition: border-color 0.15s ease;
+	}
+	.project-card:hover {
+		border-color: var(--accent);
+	}
 	.project-card h3 {
 		margin-top: 0;
+		color: var(--text);
 	}
-	.coming-soon {
-		display: inline-block;
-		margin-top: 0.5rem;
-		font-size: 0.85rem;
+	.project-card p {
 		color: var(--text-muted);
-		font-style: italic;
 	}
 	.service-card {
 		text-align: center;

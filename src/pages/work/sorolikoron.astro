@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PROJECTS } from '../../consts';
+
+const project = PROJECTS.find((p) => p.slug === 'sorolikoron')!;
+---
+
+<Layout title={`${project.name} – Tasin`} description={project.description}>
+	<article class="prose">
+		<p class="back"><a href="/">← Back to home</a></p>
+
+		<h1>{project.name}</h1>
+		<p class="role">{project.role}</p>
+
+		<p>
+			{project.description}
+		</p>
+
+		<p>
+			As Co-Founder &amp; CTO, I lead engineering for the platform, working across the mobile
+			app, backend, and the operational tooling that connects users with representatives.
+		</p>
+
+		<p class="status">Public link coming soon.</p>
+
+		<p>
+			Have a similar idea, or want to know more? <a href="/contact">Get in touch</a>.
+		</p>
+	</article>
+</Layout>
+
+<style>
+	.back {
+		margin-bottom: 1.5rem;
+	}
+	.back a {
+		color: var(--text-muted);
+		text-decoration: none;
+		font-size: 0.9rem;
+	}
+	.back a:hover {
+		color: var(--text);
+	}
+	.prose h1 {
+		margin-bottom: 0.3rem;
+	}
+	.role {
+		color: var(--text-muted);
+		margin-bottom: 1.5rem;
+	}
+	.status {
+		font-style: italic;
+		color: var(--text-muted);
+	}
+</style>
