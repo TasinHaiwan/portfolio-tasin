@@ -5,7 +5,13 @@ const today = new Date();
 
 <footer>
 	<div class="social-links">
-		<a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer">
+		<a
+			href={SOCIAL_LINKS.github}
+			target="_blank"
+			rel="noopener noreferrer"
+			data-umami-event="social-click"
+			data-umami-event-network="github"
+		>
 			<span class="sr-only">GitHub</span>
 			<svg viewBox="0 0 16 16" aria-hidden="true" width="22" height="22"
 				><path
@@ -14,7 +20,13 @@ const today = new Date();
 				></path></svg
 			>
 		</a>
-		<a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer">
+		<a
+			href={SOCIAL_LINKS.linkedin}
+			target="_blank"
+			rel="noopener noreferrer"
+			data-umami-event="social-click"
+			data-umami-event-network="linkedin"
+		>
 			<span class="sr-only">LinkedIn</span>
 			<svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"
 				><path
@@ -23,7 +35,11 @@ const today = new Date();
 				></path></svg
 			>
 		</a>
-		<a href={`mailto:${SOCIAL_LINKS.email}`}>
+		<a
+			href={`mailto:${SOCIAL_LINKS.email}`}
+			data-umami-event="social-click"
+			data-umami-event-network="email"
+		>
 			<span class="sr-only">Email</span>
 			<svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"
 				><path

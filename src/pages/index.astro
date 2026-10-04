@@ -8,7 +8,7 @@ import { PROJECTS, SITE_DESCRIPTION } from '../consts';
 		<h1>Tasin</h1>
 		<p class="subtitle">Mobile &amp; Backend Developer, Growth Strategist</p>
 		<p class="tagline">I build apps and help founders grow them.</p>
-		<a href="/contact" class="cta">Let's build your software →</a>
+		<a href="/contact" class="cta" data-umami-event="cta-click" data-umami-event-location="hero">Let's build your software →</a>
 	</section>
 
 	<section class="about">
@@ -24,7 +24,12 @@ import { PROJECTS, SITE_DESCRIPTION } from '../consts';
 		<div class="project-grid">
 			{
 				PROJECTS.map((project) => (
-					<a href={`/work/${project.slug}`} class="project-card">
+					<a
+						href={`/work/${project.slug}`}
+						class="project-card"
+						data-umami-event="project-click"
+						data-umami-event-project={project.slug}
+					>
 						<h3>{project.name}</h3>
 						<p>{project.description}</p>
 					</a>

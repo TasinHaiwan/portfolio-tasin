@@ -14,14 +14,18 @@ import { SOCIAL_LINKS } from '../consts';
 		<label>Name<input type="text" name="name" required /></label>
 		<label>Email<input type="email" name="email" required /></label>
 		<label>Message<textarea name="message" rows="5" required></textarea></label>
-		<button type="submit">Send</button>
+		<button type="submit" data-umami-event="contact-form-submit">Send</button>
 	</form>
 
 	<p class="alt-contact">
-		Or reach me on <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer"
+		Or reach me on <a
+			href={SOCIAL_LINKS.whatsapp}
+			target="_blank"
+			rel="noopener noreferrer"
+			data-umami-event="whatsapp-click"
 			>WhatsApp</a
 		>{' '}
-		or via <a href={`mailto:${SOCIAL_LINKS.email}`}>email</a>.
+		or via <a href={`mailto:${SOCIAL_LINKS.email}`} data-umami-event="email-click">email</a>.
 	</p>
 </Layout>
 
